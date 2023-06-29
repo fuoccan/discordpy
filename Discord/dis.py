@@ -15,4 +15,10 @@ async def on_ready():
         await channel.send('hello')
         await asyncio.sleep(2) # Đợi 2 giây trước khi gửi tin nhắn tiếp theo
 
+async def on_message(message):
+    if message.channel.id == CHANNEL_ID:
+        if 'aaaaaaaaaa' in message.content:
+            print('Tin nhắn chứa chuỗi "aaaaaaaaaa".')
+
 client.run(TOKEN)
+
